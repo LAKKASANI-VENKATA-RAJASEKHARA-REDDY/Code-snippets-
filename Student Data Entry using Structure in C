@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+struct data 
+{
+    int rollno;
+    char name[50];
+    float marks;
+};
+
+int main()
+{
+    struct data s;
+
+    printf("ENTER ROLL NUMBER: ");
+    scanf("%d", &s.rollno);
+
+    printf("ENTER NAME: ");
+    scanf("%s", s.name); 
+
+    printf("ENTER MARKS: ");
+    scanf("%f", &s.marks);
+
+    printf("\n--- STUDENT DETAILS ---\n");
+    printf("ROLL NUMBER: %d\n", s.rollno);
+    printf("NAME: %s\n", s.name);
+    printf("MARKS: %.2f\n", s.marks); // Formatting to 2 decimal places
+}
