@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
+
+void emailid()
+{
+    char email[300], name[300] = {0};
+    char gmail[] = "@gmail.com";
+    int i, at_count = 0, dot_count = 0, flag = 0, at_pos = -1;
+
+    printf("ENTER YOUR EMAIL ID: ");
+    fgets(email, sizeof(email), stdin);
+    
+    // Remove newline character if present
+    email[strcspn(email, "\n")] = 0; 
+
+    int len = strlen(email);
+    
+    // Validation: Must start with a letter or digit
+    if (!isalnum(email[0])) {
+        printf("EMAIL CAN'T START WITH @ OR .\n");
+        return
