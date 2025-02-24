@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<ctype.h>
+main()
+{
+	char ch;
+	printf("enter an alphabet: ");
+	scanf("%c",&ch);
+	if(isalpha(ch))
+	{
+		if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+		{
+			printf("ENTERED IS A VOWEL IN SMALL CASE\n");
+		}
+		else if(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+		{
+			printf("ENTERED IS A VOWEL IN CAPITAL CASE\n");
+		}
+		else
+		{
+			printf("ENTERED IS A CONSONANT\n");
+		}
+	}
+	else
+	{
+		printf("ENTERED IS NOT AN ALPHABET\n");
+	}
+}
