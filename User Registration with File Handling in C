@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include"login credentials final.c"
+main()
+{
+	long long unsigned int cell,aadharnum;
+	int age;
+	char name[50];
+	char gender[20];
+	char address[70];
+	char occupation[30];
+	FILE *a;
+	printf("ENTER YOUR NAME HERE: ");
+	gets(name);
+	printf("ENTER YOUR CELL: ");
+	scanf("%llu",&cell);
+	printf("ENTER YOUR AADHAR NUMBER: ");
+	scanf("%llu",&aadharnum);
+	printf("ENTER YOUR AGE HERE: ");
+	scanf("%d",&age);
+	printf("ENTER YOUR ADDRESS: ");
+	gets(address);
+	printf("ENTER YOUR OCCUPATION: ");
+	gets(occupation);
+	printf("ENTER YOUR GENDER: ");
+	scanf("%s",&gender);
+	if (age>=18)
+	{
+		a=fopen("filename.txt","w");
+		fprintf(a,"\nNAME: %s\nCELL NUMBER: %llu\nAADHAR NUMBER: %llu\nAGE: %d\nGENDER: %s\nADDRESS: %s\nOCCUPATION: %s\n*************************************************\n",name,cell,aadharnum,age,gender,address,occupation);
+		fclose(a);
+	}
+	else
+	{
+		if(age<18)
+		{
+			printf("AGE MUST BE ABOVE 18\n");
+		}
+		else if(gender!="male"||gender!="female"||gender!="trans")
+		{
+			printf("ENTER VALID GENDER\n");
+		}
+		else
+		{
+			printf("AGE MUST BE ABOVE 18 AND GENDER MUST BE A VALID ONE\n");
+		}
+	}
+	pass();
+		
+}
