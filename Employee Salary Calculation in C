@@ -1,0 +1,39 @@
+#include<stdio.h>
+main()
+{
+	char id[50];
+	char name[50];
+	int age,sal;
+	float DA,PF,TA,HRA,LIC,gross;
+	printf("ENTER EMPLOYEE NAME: ");
+	gets(name);
+	printf("ENTER EMPLOYEE ID: ");
+	gets(id);
+	printf("ENTER EMPLOYEE AGE: ");
+	scanf("%d",&age);
+	printf("ENTER EMPLOYEE SALARY: ");
+	scanf("%d",&sal);
+	DA=sal*4/100;
+	TA=sal*6/100;
+	HRA=sal*5/100;
+	LIC=sal*10/100;
+	PF=sal*20/100;
+	gross=sal-LIC-PF+DA+TA+HRA;
+	printf("**********EMPLOYEE DETAILS**********\n");
+	
+	printf("	EMPLOYEE NAME: %s\n",name);
+	printf("	EMPLOYEE ID: %s\n",id);
+	printf("	EMPLOYEE AGE: %d\n",age);
+	printf("	EMPLOYEE SALARY IS: %d\n",sal);
+	printf("	EMPLOYEE GROSS: %.2f\n",gross);
+	
+	printf("*********EMPLOYEE CUTTING'S**********\n");
+	
+	printf("	DAILY ALLIANCES: %.2f\n",DA);
+	printf("	TRAVELLING ALLIANCES: %.2f\n",TA);
+	printf("	HOUSE RENT ALLIANCES: %.2f\n",HRA);
+	printf("	LIFE INSURANCE POLICY: %.2f\n",LIC);
+	printf("	PROVIDENT FUND: %.2f\n",PF);
+	
+	
+}
