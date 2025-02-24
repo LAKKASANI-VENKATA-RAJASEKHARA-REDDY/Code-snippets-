@@ -1,0 +1,19 @@
+#include <stdio.h>  
+
+int main()  
+{  
+    int i, j, a = 1, lim;   
+    printf("Enter the limit: ");  
+    scanf("%d", &lim);
+  
+    for(i = lim; i >= 1; i--)  // Outer loop for rows
+    {
+        for(j = 1; j <= i; j++)  // Inner loop for numbers
+        {
+            printf("%4d", a++);
+        }
+        printf("\n");  // Move to the next line after each row
+    } 
+
+    return 0;  
+}
