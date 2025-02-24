@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+#include"student details prograam.c"
+main()
+{
+	char sname[100];
+	int rollno,i;
+	char sta[15];
+	FILE *a;
+	FILE *b;
+	printf("ENTER STUDENT NAME: ");
+	gets(sname);
+	printf("ENTER STUDENT ROLL NUMBER: ");
+	scanf("%d",&rollno);
+	printf("ENTER STATUS OF STUDENT'S ATTENDANCE: ");
+	scanf("%s",&sta);
+	for(i=0;sta[i];i++)
+	{
+		sta[i]=tolower(sta[i]);
+	}
+	printf("%s",sta);
+	int bulb;
+	char sta1[10]="present";
+	char sta2[10]="absent";
+	bulb=strcmp(sta1,sta);
+	int light=strcmp(sta2,sta);
+	
+	if(bulb==0)
+	{
+		a=fopen("Attendance1.txt","a");
+		fprintf(a,"STUDENT NAME: %s\nSTUDENT ROLL NUMBER: %d",sname,rollno);
+		fclose(a);
+	}
+	else if(light==0)
+	{
+		b=fopen("Attendance2.txt","a");
+		fprintf(b,"STUDENT NAME: %s\nSTUDENT ROLL NUMBER: %d",sname,rollno);
+		fclose(b);
+	}
+	else
+	{
+		printf("ENTER PRESENT OR ABSENT\n");
+	}
+}
