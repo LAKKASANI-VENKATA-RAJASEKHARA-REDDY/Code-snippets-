@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+//#include"ultimste password input2.c"
+
+main()
+{
+	FILE *a;
+	char name[50],add[50],occ[50],gender[10];
+	char gen;
+	int age,cmp1=0,cmp2=0,cmp3=0,i;
+	char x[10]="male";
+	char y[10]="female";
+	char z[10]="trans";
+	long long unsigned int cell,aad;
+	printf("ENTER YOUR NAME HERE: ");
+	gets(name);
+	printf("ENTER YOUR ADDRESS HERE: ");
+	gets(add);
+	printf("ENTER YOUR GENDER HERE: ");
+	scanf("%s",&gender);
+	for(i=0;gender[i];i++)
+	{
+		gender[i]=tolower(gender[i]);
+	}
+	cmp1=strcmp(gender,x);
+	cmp2=strcmp(gender,y);
+	cmp3=strcmp(gender,z);
+	printf("ENTER YOUR CELL NUMBER HERE: ");
+	scanf("%llu",&cell);
+	printf("ENTER YOUR AGE HERE: ");
+	scanf("%d",&age);
+	
+	if(age>=18 && cmp1==0 || cmp2==0 || cmp3==0)
+	{
+		printf("ENTER YOUR AADHAR NUMBER HERE: ");
+		scanf("%llu",&aad);
+		printf("ENTER YOUR OCCUPATION HERE: ");
+		scanf("%s",&occ);
+		a=fopen("filename.txt","w");
+		fprintf(a,"name: %s\nage: %d\ncell: %llu\naadhar number: %llu\naddress: %s\noccupation: %s\n**************************************************\n",name,age,cell,aad,add,occ);
+		fclose(a);
+		printf("FILE CREATED SUCESSFULLY:)\n");
+	}
+	else
+	{
+		if(age<18)
+			printf("user must be 18 years or older\n");
+		else if(cmp1!=0&&cmp2!=0)
+		{
+			if(cmp3!=0)
+			{
+				printf("GENDER MUST BE A VALID ONE\n");
+			}
+			else
+			{
+				printf("ENTER YOUR AADHAR NUMBER HERE: ");
+				scanf("%llu",&aad);
+				printf("ENTER YOUR OCCUPATION HERE: ");
+				scanf("%s",&occ);
+				a=fopen("filename.txt","w");
+				fprintf(a,"name: %s\nage: %d\ncell: %llu\naadhar number: %llu\naddress: %s\noccupation: %s\n",name,age,cell,aad,add,occ);
+				fclose(a);
+				printf("FILE CREATED SUCESSFULLY:)\n");
+			}
+		}
+		else
+		{
+			printf("USER MUST BE 18 YEARS OR OLDER AND MUST ENTER A VALID GENDER\n");
+		}
+	}
+}
