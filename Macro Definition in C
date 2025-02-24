@@ -1,0 +1,11 @@
+#include<stdio.h>
+
+#define name "sekhar"
+main()
+{
+	printf("hello\n");
+	printf("%s",name);
+}
+
+
+#define name "raj"
