@@ -1,0 +1,12 @@
+#include<stdio.h>
+main()
+{
+	int year, result,output,final;
+	printf("ENTER YEAR: ");
+	scanf("%i",&year);
+	result=year%4;
+	output=year%100;
+	final=year%400;
+	result==0&&output!=0||
+	final==0?printf("LEAP YEAR\n"):printf("NOT A LEAP YEAR\n");
+}
