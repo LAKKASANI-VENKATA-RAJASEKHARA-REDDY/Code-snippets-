@@ -1,0 +1,21 @@
+/*To find the area of a Triangle with 3 sides given using
+formula, Area = v(s(s-a) (s-b) (s-c))
+where a, b and c are lengths of sides of Triangle, and
+s = (a+b+c) / 2*/
+
+#include<stdio.h>
+#include<math.h>
+main()
+{
+	float a,b,c,s,x,y;
+	printf("ENTER LENGTH OF FIRST SIDE OF THE TRIANGLE a:");
+	scanf("%f",&a);
+	printf("ENTER LENGTH OF SECOND SIDE OF THE TRIANGLE b: ");
+	scanf("%f",&b);
+	printf("ENTER LENGTH OF THIRD SIDE OF THE TRIANGLE c: ");
+	scanf("%f",&c);
+	s=(a+b+c)/2.0;
+	x=(s*(s-a)*(s-b)*(s-c));
+	y=sqrtf(x);
+	printf("AREA OF THE TRIANGLE IS: %f",y);
+}
