@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    FILE *a;
+    char write[100];
+    a = fopen("filename.txt", "a");
+    if (a == NULL) {
+        printf("Error opening file!\n");
+        return 1;
+    }
+    printf("Enter text to write to the file: ");
+    fgets(write, sizeof(write), stdin); // Taking input safely
+
+    // Write input to file
+    fputs(write, a);
+    fclose(a);
+
+    printf("Data successfully written to the file.\n");
+    return 0;
+}
