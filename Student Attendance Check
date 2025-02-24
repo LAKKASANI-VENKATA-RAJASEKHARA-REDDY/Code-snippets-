@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+#include<conio.h>
+main()
+{
+	int roll;
+	char name[5];
+	char resp;
+	char resp1;
+	//printf("STUDENT NAME: ");
+	//gets(name);
+	printf("ROLL NUMBER: ");
+	scanf("%d",&roll);
+	printf("IF STUDENT IS PRESENT press Y else N: ");
+	scanf(" %c",&resp);//IMPORTANT
+	//resp=getch();
+	resp1=toupper(resp);
+	printf("resp1: %c",resp1);
+	/*if(resp1=='Y')
+	{
+		printf("PRESENT\n");
+	}
+	else if(resp1=='N')
+	{
+		printf("ABSENT\n");
+	}
+	else
+	{
+		printf("PRESS EITHER Y or N\n");
+	}*/
+}
