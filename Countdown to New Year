@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<conio.h>
+main()
+{
+	int i;
+	for(i=3;i>0;i--){
+		printf("%i\n",i);
+	}
+    printf("HAPPY NEW YEAR!!!");
+	getch();
+} 
+
