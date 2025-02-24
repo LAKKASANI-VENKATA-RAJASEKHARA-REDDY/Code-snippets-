@@ -1,0 +1,24 @@
+#include<stdio.h>
+main()
+{
+	int rollno,tel,hin,eng,tot;
+	char name[20];
+	float avg;
+	printf("ROLL NUMBER:");
+	scanf("%i",&rollno);
+	printf("NAME: ");
+	scanf("%s",&name);
+	printf("ENTER TELUGU MARKS: ");
+	scanf("%i",&tel);
+	printf("ENTER HINDI MARKS: ");
+	scanf("%i",&hin);
+	printf("ENTER ENGLISH MARKS: ");
+	scanf("%i",&eng);
+	tot=tel+hin+eng;
+	avg=tot/3.0;
+	avg<35?printf("FAIL"):avg>=35&&avg<55
+          ?printf("PASS"):avg>=55&&avg<65
+          ?printf("SECOND CLASS"):avg>=65&&avg<75
+          ?printf("FIRST CLASS"):avg>=75
+          ?printf("DISTINCTION"):printf(" ");
+}
