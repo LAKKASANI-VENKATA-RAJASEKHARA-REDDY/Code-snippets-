@@ -1,0 +1,117 @@
+#include<stdio.h>
+#include<string.h>
+#include<conio.h>
+#include<ctype.h>
+#include<stdlib.h>
+#include<malloc.h>
+#include<string.h>
+void emailid()
+{
+	char *email;
+	char email_arr[300]={},ch,c;
+	char name[300]={};
+	int i,a=0,b=0,d,flag=0;
+	int size,count=0;
+	char mail[100],x;
+	char gmail[100]="@gmail.com",id[100];
+	email=(char*)malloc(200);
+	size=_msize(email);
+	printf("ENTER YOUR EMAIL ID: ");
+	for(i=0;i<size;i++)
+	{
+		ch=getch();
+		x=tolower(ch);
+		if(x==13)
+		{										//8=backspace
+			break;
+		}
+		else
+		{
+			if(x==64||x==46||isalpha(x)||isdigit(x)||x==27||x==8)
+			{
+				if((i==0) && (x==64||x==46))
+				{
+					//printf("%d",i);
+					printf("EMAIL CAN'T START WITH @\n");
+					exit(1);
+				}
+				else
+				{
+					if(x!=8)
+					{
+						c=x;
+						a++;
+						ch=x;
+						printf("%c",x);
+						*(email+i-2*b)=c;
+						if(x!=64&&count==0)
+						{
+							
+							name[i]=c;
+							d=i;
+						}
+						else
+						{
+							count++;
+							//d=i;
+							continue;
+						}
+						if(x==27)
+						{
+							exit(1);
+						}
+					}
+					else
+					{
+						printf("%c \b",x);
+						*(email+i)='\n';
+						b++;
+					}
+				}
+				
+			}
+			else
+			{
+				printf("NO SPECIAL SYMBOLS OTHER THAN @ . SHOULD BE USED\n");
+				exit(1);
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	printf("\n");
+	for(i=0;i<a-b;i++)
+	{
+		email_arr[i]=*(email+i);
+	}
+	printf("your email id is: ");
+	for(i=0;i<a-b;i++)
+	{
+		printf("%c",email_arr[i]);
+	}
+	printf("\n");
+	email_arr[i]='\0';
+	name[d+1]='\0';
+	strcpy(mail,email_arr);
+	strcpy(id,name);
+	strcat(name,gmail);
+	flag=strcmp(name,mail);
+	if(flag==0)
+	{
+		printf("\nEMAIL CREATED SUCCESFULLY\n");
+	}
+	else
+	{
+		printf("\nEMAIL MUST BE OF FORMAT xyz@gmail.com\n");
+	}
+	printf("\n\n");
+}
+const char key[50]="kjg";
+main()
+{
+	emailid();
+	printf("key value is: %s",key);
+}
