@@ -1,0 +1,86 @@
+#include<stdio.h>
+main()
+{
+	int num,lim,i,ch,sum=0,count=0;
+	printf("1.nat\n2.eve\n3.odd\n");
+	printf("enter your choice: ");
+	scanf("%d",&ch);
+	if(ch==1||ch==2||ch==3)
+		{
+			printf("enter a start value: ");
+   			scanf("%d",&num);
+		    printf("ENTER LIMIT: ");
+		    scanf("%d",&lim);
+			if(ch==1)
+			{
+				for(i=num;i<=lim;i++)
+				{
+					printf("%d\n",i);
+					sum=sum+i;
+					count=count+1;
+				}
+				printf("sum: %d",sum);
+				printf("count: %d ",count);
+			}
+			else if(ch==2)
+			{
+				if(num%2==0)
+					{
+						for(i=num;i<=lim;i=i+2)//set
+						{
+							printf("%d\n",i);
+							sum=sum+i;
+							count=count+1;
+						}
+						printf("sum: %d",sum);
+						printf("count: %d",count);
+					}
+				else 
+					{
+						for(i=num;i<=lim;i=i+1)
+						{
+							if(i%2==0)
+							{
+								printf("%d",i);
+								sum=sum+i;
+							count=count+1;
+							}
+							else
+							printf(" ");
+						}
+						printf("sum: %d",sum);
+						printf("count: %d",count);
+					}
+			}
+			else if(ch==3)
+			{
+				if(num%2==0)
+					{
+						for(i=num;i<=lim;i=i+1)
+						{
+							if(i%2!=0)
+							{
+								printf("%d",i);
+							    sum=sum+i;
+							    count=count+1;
+							}
+						}
+						printf("sum: %d",sum);
+						printf("count: %d",count);
+					}
+				else 
+					{
+						for(i=num;i<=lim;i=i+2)
+						{
+							printf("%d",i);
+							sum=sum+i;
+							count=count+1;
+						}
+						printf("sum: %d",sum);
+						printf("count: %d",count);
+					}
+			}
+		}
+		else
+				printf("enter valid choice\n");
+}
