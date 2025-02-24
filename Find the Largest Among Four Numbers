@@ -1,0 +1,11 @@
+#include<stdio.h>
+main()
+{
+	int a,b,c,d;
+	printf("a,b,c,d:");
+	scanf("%d%d%d%d",&a,&b,&c,&d);
+	a>b&&a>c&&a>d?printf("A"):
+	b>c&&b>d?printf("B"):
+	d>b&&d>c?printf("D"):
+	c>b&&c>d?printf("C"):printf(" ");	
+}
